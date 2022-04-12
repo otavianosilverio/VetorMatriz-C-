@@ -12,44 +12,80 @@ namespace VetorMatriz
         {
 
 
-           
-           Random objeto = new Random(10);
-            // vetor
-            int[] idade = new int[10];
-            
-            idade[0] = 20;
-            idade[1] = 30;
 
-           
-            for (int x = 0; x < idade.Length; x++)
-            {
-               idade[x] = objeto.Next(1,15);
-               Console.Write(idade[x] + "\n");
+            Random objeto = new Random(10);
+            // Matriz - Lista Atividade 1
+            //int[ , ] notas = new int[2 , 4] ;
+            //int linha, coluna = 0;
+            //int qtdecelulas = 0;
+            // for (linha = 0; linha < 2; linha++)
+            // {
+            //     for (coluna =0; coluna < 4; coluna++)
+            //     {
+            //         notas[linha,coluna] = objeto.Next(1,20);
+            // Verificar colunas com valores entre 10 e 15
+            //        if ((notas[linha, coluna] >=10) && (notas[linha, coluna] <= 15))
+            //        {
+            //            qtdecelulas++;
+            //        }
+            // Console.Write(notas[linha, coluna] + "\t");
+            //    }
+            // Console.Write("\n");
+            //  }
+            //Console.Write(qtdecelulas + "\n");
 
-            }
 
+            // Matriz - Lista Atividade 2
+            //  int[,] notas = new int[10, 10];
+            // int linha, coluna = 0;
+            //  int somacoluna7 = 0, somalinha5 = 0;
 
-            // Matriz
-            int[ , ] notas = new int[2 , 5] ;
+            //  for (linha = 0; linha < 10; linha++)
+            //  {
+            //      for (coluna = 0; coluna < 10; coluna++)
+            //      {
+            //          notas[linha, coluna] = objeto.Next(1, 10);
+            //          Console.Write(notas[linha, coluna] + "\t");
+            //          somalinha5 = somalinha5 + notas[4, coluna];
+            //      }
+            //      somacoluna7 = somacoluna7 + notas[linha, 6];
+            //      
+            //       Console.Write("\n");
+            //    }
+            //    Console.Write("Soma Coluna 7"+somacoluna7+ "\n");
+            //    Console.Write("Soma Linha 5" + somalinha5 + "\n");
+
+            // Lista Questao 4
+
+            int[,] matriz = new int[6, 6];
+            int[] vetor = new int[6];
+            int Maior = 0;
             int linha, coluna = 0;
-            for (linha = 0; linha < 2; linha++)
+            // Preenchendo a matriz
+            for (linha = 0; linha < 6; linha++)
             {
-                for (coluna =0; coluna < 5; coluna++)
+                Maior = 0;
+                for (coluna = 0; coluna < 6; coluna++)
                 {
-                    notas[linha,coluna] = objeto.Next();
-                }
-            }
-            for (linha = 0; linha < 2; linha++)
-            {
-                for (coluna = 0; coluna < 5; coluna++)
-                {
-                    Console.Write(notas[linha,coluna] + "\t");
+                      matriz[linha, coluna] = objeto.Next(1, 50);
+                      Console.Write(matriz[linha, coluna] + "\t");
+                    // Verificar se a linha da matriz é par
+                    if (linha % 2 == 0)
+                    {
+                        // Linha para identiicando o numero maior
+                        if (matriz[linha, coluna] > Maior)
+                        {
+                            Maior = matriz[linha, coluna];
+                        }
+                    }
                 }
                 Console.Write("\n");
+                Console.Write("Maior da Linha "+Maior + "\t");
+               
             }
 
 
-            Console.ReadKey();
+                Console.ReadKey();
 
 
         }
